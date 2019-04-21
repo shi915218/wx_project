@@ -1,7 +1,10 @@
-<!--index.wxml-->
+<!-- index.wxml -->
+<import src="test.wxml" />
 <view class="container">
   <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+      获取头像昵称
+    </button>
     <block wx:else>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
@@ -9,5 +12,13 @@
   </view>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
+  </view>
+  <van-stepper type="primary"></van-stepper>
+  <template is="test" data="{{test:test}}"></template>
+  <view class="iconfont icon-jiantou"></view>
+  <view>
+    <picker bindchange="bindPickerChange" value="{{index}}" range-key="{{'name'}}" range="{{array}}">
+      <button type="default">{{array[index].name}}</button>
+    </picker>
   </view>
 </view>

@@ -1,0 +1,3 @@
+<template name="test">
+    <view bindtap="test" data-test="khjjjhh">点击</view>
+</template>

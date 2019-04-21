@@ -14,6 +14,23 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+function initDataProxy (){
+  console.log(this)
+  Object.keys(this.data).forEach(key=> {
+    var me = this;
+    Object.defineProperty(me, key, {
+        configurable: false,
+        enumerable: true,
+        get: function proxyGetter() {
+            return me.data[key];
+        },
+        set: function proxySetter(newVal) {
+            me.data[key] = newVal;
+        }
+    });
+  });
+}
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  initDataProxy:initDataProxy
 }
