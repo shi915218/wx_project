@@ -35,7 +35,7 @@ App({
     })
   },
   test() {
-    console.log('hahhahahhah')
+    console.log('gdgg1111111')
   },
   globalData: {
     userInfo: null,
