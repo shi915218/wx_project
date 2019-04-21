@@ -35,7 +35,7 @@ App({
     })
   },
   test() {
-    console.log('gdgg1111111')
+    console.log('gdgg22222111')
   },
   globalData: {
     userInfo: null,
